@@ -13,7 +13,6 @@ const BrowserWindow = ({ children }: BrowserWindowProps) => (
                 <span className="circle green" />
             </div>
         </div>
-       
         <div className="content-area">
             {children}
         </div>
