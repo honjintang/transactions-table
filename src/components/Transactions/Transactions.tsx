@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Table from './Table';
-import type { Transaction } from './types';
+import Table from '../Table/Table';
+import type { Transaction } from '../types';
 
 interface FetchState {
   transactions: Transaction[];
@@ -50,10 +50,8 @@ const Transactions = () => {
 
     return (
       <>
-        {transactions.length > 0 && <Table 
-            columns={['ID', 'Date', 'Amount', 'Merchant', 'Category']} 
-            rows={transactions} 
-        />}
+        <h1>Expenses</h1>
+        {transactions.length > 0 && <Table rows={transactions} />}
       </>
 
     )

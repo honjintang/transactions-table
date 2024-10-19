@@ -1,10 +1,12 @@
-import Transactions from "./components/Transactions";
+import BrowserWindow from "./components/BrowserWindow/BrowserWindow";
+import Transactions from "./components/Transactions/Transactions";
 
 function App() {
   return (
-    <div id="template-text">
-      <h1>Expenses</h1>
-      <Transactions />
+    <div id="app-container">
+      <BrowserWindow>
+        <Transactions />
+      </BrowserWindow>
     </div>
   );
 }

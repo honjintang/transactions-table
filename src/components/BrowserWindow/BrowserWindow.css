@@ -1,0 +1,45 @@
+.browser-window {
+    border-radius: 0.5%;
+    overflow: auto;
+    width: 80%;
+}
+
+.content-area {
+    padding: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    background-color: #abadad;
+    padding: 20px;
+    display: flex;
+    opacity: 0.80;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+  
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red {
+    background-color: #ff5f57;
+}
+
+.yellow {
+    background-color: #ffbd2e;
+}
+
+.green {
+    background-color: #28c941;
+}
