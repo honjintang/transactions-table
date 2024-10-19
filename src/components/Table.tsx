@@ -1,11 +1,4 @@
-interface Transaction {
-    id: number;
-    date: string;
-    amount: number;
-    merchant: string;
-    category: string; 
-}
-// deduplicate types
+import type { Transaction } from './types';
 
 interface TableProps {
     columns: string[];
@@ -20,7 +13,7 @@ const isValidHeading = (heading: string): heading is ValidHeading => {
 }
 
 const Table = ({ columns, rows }: TableProps) => {
-    const validNormalizedColumns = columns
+    const normalizedColumns = columns
         .map(column => column.toLowerCase())
         .filter(column => isValidHeading(column))
     
@@ -28,12 +21,12 @@ const Table = ({ columns, rows }: TableProps) => {
           <table>
           <thead>
             <tr>
-              {validNormalizedColumns.map(column => (
+              {normalizedColumns.map(normalizedColumn => (
                   <th 
-                      id={`column-${column}`} 
-                      key={`${column}`}
+                      id={`column-${normalizedColumn}`} 
+                      key={`${normalizedColumn}`}
                   >
-                      {columns.find(originalColumn => originalColumn.toLowerCase() === column)}
+                      {columns.find(originalColumn => originalColumn.toLowerCase() === normalizedColumn)}
                   </th>
               ))}
             </tr>
@@ -41,10 +34,10 @@ const Table = ({ columns, rows }: TableProps) => {
           <tbody>
             {rows.map((row) => (
               <tr key={row.id}>
-                {validNormalizedColumns.map(column => (
+                {normalizedColumns.map(normalizedColumn => (
                   <td 
-                      headers={`column-${column}`} 
-                      key={`${row.id}-${column}`}>{row[column]}</td>
+                      headers={`column-${normalizedColumn}`} 
+                      key={`${row.id}-${normalizedColumn}`}>{row[normalizedColumn]}</td>
                 ))}
               </tr>
             ))}
